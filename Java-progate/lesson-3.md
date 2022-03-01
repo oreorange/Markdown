@@ -5,7 +5,7 @@
 - 他クラスのメソッドを呼び出すときは、クラス名.メソッド名(); とする。　ex) Person.printDate();
 
 ```
-## Main.java
+Main.java
 public class Main {
   public static void main(String[] args) {
     // printDataメソッドとfullNameメソッドの呼び出しを書き換えてください
@@ -44,6 +44,45 @@ public class Main {
 
   public static boolean isHealthy(double bmi) {
     return bmi >= 18.5 && bmi < 25.0;
+  }
+}
+```
+
+## 11. ライブラリを使ってみよう
+- 外部ライブラリを読み込むには、class定義より上にimportを使って記述する。 Java.langの部分はMathクラスの場所を示している
+- 「java.lang.Math」は利用頻度が高いので、importせずに自動で読み込まれるようになっている。Mathクラス以外にも「java.lang.クラス名」となる外部ライブラリは全て自動で読み込まれる
+
+```
+import java.lang.Math;　// 外部ライプラリを読み込む
+
+Class Main {
+}
+``` 
+
+## 12.13. 入力を受け取ろう
+- Scanner コンソールへの入力を受け取るライブラリ　ライブラリの使い方はググる
+- データ型　変数 = scanner.next();   // nextの後ろは受け取るデータ型によって変える
+
+```
+import java.util.Scanner; //外部ライブラリ読み込み
+
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.print("名前：");
+    // 文字列の入力を受け取る
+    String firstName = scanner.next();
+    
+    System.out.print("年齢：");
+    // 整数の入力を受け取ってください
+    int age = scanner.nextInt();
+    
+    System.out.print("身長(m)：");
+    // 小数の入力を受け取ってください
+    double height = scanner.nextDouble();
+    
+    Person.printData(Person.fullName(firstName, lastName), age, height, weight);
   }
 }
 ```
