@@ -1,6 +1,6 @@
 # Java 1~3まとめ
 ## 条件分岐、繰り返し処理、メソッド
-```
+```java
 Main.java
 
 import java.util.Scanner;
@@ -43,7 +43,7 @@ class Main {
 
 ```
 
-```
+```java
 Person.java
 
 class Person {
