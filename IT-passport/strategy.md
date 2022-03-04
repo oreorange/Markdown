@@ -38,5 +38,16 @@
 ## 3. 経営戦略マネジメント
 ```
 用語・試験頻出
-
+- SWOT分析 経営環境を、Strengths(強み),Weaknesses(弱み),Opportunities(機会),Threats(脅威) の4つに分類する手法
+- 内部環境によるものか外部環境によるものかで、分類する。
+- PRM(Product Portfolio Management)　市場成長率や市場占有率から投資する対象を見極める。
+- マーケティングミックス　4P (Product(製品),Price(価格),Place(流通),Promotion(販売促進))
+- 4C (Customer Value(顧客にとっての価値), Cost(顧客の負担), Convenience(利便性), Communication)
+- RFM分析　Recency(最終購入日), Frequency(購入頻度), Monetary(累計購買金額)。優良顧客を見つけるための分析手法
+- UX 商品やサービスなどを実際に利用することによって得られる体験。
+- BSC バランススコアカード　財務、顧客、業務プロセス、学習と成長の4つの視点から業績評価を行う手法。
+- CSF (Critical Success Factors) 重要成功要因、戦略目標を達成するために必要となる具体的な要因。
+- KPI (Key Performance Indicator) 重要業績評価指標、戦略目標の達成状況を表す指標。
+- 一元管理の4用語 (ERP 社内の経営資源, CRM 顧客情報, SFA 営業ノウハウ, SCM 社外も含めた製品情報）
 ```
+
