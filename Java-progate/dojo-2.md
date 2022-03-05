@@ -1,6 +1,6 @@
 # Java 4 復習
 ## 2. インスタンス作成、ゲッター呼び出し、インスタンスフィールド、コンストラクタ、ゲッターメソッド
-```java:2
+```java:2.java
 Main.java
 
 class Main {
@@ -31,7 +31,7 @@ class Bicycle {
 }
 ```
 ## 3. インスタンスフィールド追加、出力内容をまとめる
-```java:3
+```3.java
 Main.java
 
 class Main {
