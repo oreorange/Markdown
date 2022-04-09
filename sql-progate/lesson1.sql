@@ -2,7 +2,7 @@
 
 -- 「FROM purchases」のあとにコードを追加し、purchased_atカラムが「2017-08-01以前」のデータを取得してください
 
-SELECT * --全てのカラム参照　selectでカラムを指定
+SELECT * --全てのカラム参照　selectで取得するカラムを指定
 FROM purchases --fromでテーブルを指定
 where purchased_at <= "2017-08-01"; --whereで比較演算子を使いレコードを指定
 
