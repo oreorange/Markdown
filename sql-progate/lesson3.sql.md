@@ -79,3 +79,23 @@ GROUPBY
 HAVING     -- グループ化後、絞り込み
 ORDERBY    -- 並び替え、昇順、降順
 ```
+
+# sql4 取得以外のコマンド
+
+## 追加　更新　削除
+
+```sql
+-- 追加  studentsテーブルにnameをKaty、courseをHTMLとしたレコードを追加してください。
+insert into students (name, course)
+values ("Katy", "HTML");
+-- 更新  studentsテーブルのidカラムの値が6のレコードのnameをJuliet、courseをRubyに更新してください。
+update students
+set name = "Juliet", course = "Ruby"
+where id = 6;
+
+-- 削除  studentsテーブルのidカラムの値が2のレコードを削除してください。
+delete from students where id = 2;
+
+-- 更新後のデータ照会  下記のクエリは消さないでください。
+SELECT * FROM students;
+```
