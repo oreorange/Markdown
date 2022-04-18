@@ -50,3 +50,32 @@ on players.country_id = countries.id
 group by countries.name
 ;
 ```
+
+# 道場レッスン　 sql 1〜3 復習、忘れていたコマンド
+
+## distinct(カラム名)
+
+```sql
+select distinct(name) -- カラムの重複を省いて表示
+from items;
+```
+
+## order by(カラム名) desc(降順) / asc(昇順)
+
+```sql
+select name, price
+from items
+order by price desc; -- 並べ替え
+```
+
+## 書き順メモ
+
+```sql
+SELECT     -- 結果
+FROM JOIN  -- テーブル選択
+ON         -- カラム = カラム
+WHERE      -- 条件
+GROUPBY
+HAVING     -- グループ化後、絞り込み
+ORDERBY    -- 並び替え、昇順、降順
+```

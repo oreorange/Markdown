@@ -4,10 +4,11 @@ FROM purchase
 SELECT name, price, price * 1.08 -- 消費税を計算する
 FROM purchases;
 
-select sum(), -- 合計
-select avg(), -- 平均
-select count(), -- 数を計算
-select max(), -- 最大　min(), 最小
+select sum(カラム名), -- 合計
+select avg(),        -- 平均
+select count(),      -- 数を計算, 数を数える
+select max(),        -- 最大　min(), 最小
+select distinct(),   -- 重複を無くす
 
 SELECT sum(price), purchased_at
 FROM purchases
