@@ -1,5 +1,57 @@
 # ES2015 (ES6)
 
+# lesson 3
+
+## アロー関数
+
+```javascript
+// const introduce = function() {
+const introduce = () => {
+  // ES6から導入された書き方、シンプルに書ける　アロー関数と呼ぶ
+  console.log("こんにちは");
+  console.log("私は忍者です");
+};
+
+introduce(); // 関数の呼び出し(使い方)
+```
+
+## 引数
+
+```javascript
+const add = (number1, number2) => {
+  // ()内に引数を書く、コンマで区切ると複数渡せる
+  console.log(`足し算${number1 + number2}`);
+};
+
+add(5, 7);
+```
+
+## 戻り値 : return 使い方
+
+```javascript
+const half = (number) => {
+  return number / 2;
+};
+const result = half(130); // 関数の戻り値は、定数に代入もできる
+console.log(`130の半分は${result}です`);
+```
+
+```javascript
+const check = (number) => {
+  return number % 3 === 0; // 3の倍数かどうかを戻り値として返す　true false
+  // return は関数の処理を終了させる性質がある、return の後にある処理は実行されない
+};
+
+if (check(123)) {
+  // if文の条件式で、checkを呼び出す
+  console.log("3の倍数です");
+} else {
+  console.log("3の倍数ではありません");
+}
+```
+
+# lesson 1~2
+
 ## 変数 定数
 
 ```javascript
