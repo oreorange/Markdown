@@ -1,6 +1,169 @@
 # ES2015 (ES6)
 
-# lesson 3
+# Lesson 4
+
+## オブジェクト : 復習 値には関数も設定できる
+
+```javascript
+const animal = {
+  name: "レオ", //プロパティ: 値, プロパティ: 値
+  age: 3,
+  greet: () => {
+    console.log("こんにちは");
+  },
+};
+console.log(animal.name); // animalのnameプロパティの値を出力
+animal.greet(); // こんにちは, animalのgreetプロパティの関数を実行
+```
+
+## クラス : オブジェクトの設計図
+
+```javascript
+class Animal {} //クラス名は大文字で始める
+const animal = new Animal(); //クラスから生成したオブジェクトはインスタンスと呼ぶ
+// AnimalクラスのインスタンスをAnimalインスタンスと呼ぶ
+```
+
+## コンストラクタ
+
+```javascript
+// クラスはコンストラクタを設定できる
+class Animal {
+  constructor() {
+    // コンストラクタはインスタンスが生成された直後に実行される、インスタンスごとに毎回実行される
+    this.name = "レオ"; // this.プロパティ = 値;
+  }
+  const animal = new Animal();
+  console.log(`名前:${animal.name}`)
+  // インスタンスはオブジェクトなので、インスタンス.プロパティで使用できる
+  // しかし、このままではインスタンスが毎回同じ値になってしまう
+}
+```
+
+## コンストラクタで、関数と同じように、引数を受け取る
+
+```javascript
+class Animal {
+  // 引数に「name」と「age」を追加
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+const animal = new Animal("モカ", 8); // インスタンス生成時引数渡す
+
+console.log(`名前: ${animal.name}`); // 名前:モカ
+console.log(`年齢: ${animal.age}`); // 年齢:8
+```
+
+## メソッド : クラスの中で定義するもので、関数と似たようなもの
+
+```javascript
+// メソッドは、そのクラスから生成したインスタンスに対して呼び出す
+// インスタンス名.メソッド名（）とすることで処理を実行
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  // メソッドはコンストラクタの外に記述する
+  greet() {
+    console.log("こんにちは");
+  }
+  // infoメソッドを追加してください
+  info() {
+    // メソッド内で「this.メソッド名()」とすることで、同じクラスの他のメソッドを使うことができる
+    this.greet(); //この場合 infoメソッドだけでgreetメソッドも実行される、thisはクラス内なのでanimalの代わり?
+    console.log(`名前は${this.name}です`);
+    console.log(`${this.age}歳です`);
+  }
+}
+
+const animal = new Animal("レオ", 3);
+animal.greet(); // こんにちは
+animal.info(); // animalに対してinfoメソッドを呼び出してください
+```
+
+## 継承
+
+```javascript
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() {
+    console.log("こんにちは");
+  }
+
+  info() {
+    this.greet();
+    console.log(`名前は${this.name}です`);
+    console.log(`${this.age}歳です`);
+  }
+}
+
+// class 子クラス名　extends 親クラス名 {} で継承をすることができる
+class Dog extends Animal {
+  getHumanAge() {
+    return this.age * 7; // getHumanAgeメソッドを追加
+  }
+}
+
+const dog = new Dog("レオ", 4);
+dog.info(); // 子クラスは親クラスのメソッドを使える
+
+// 定数humanAgeを定義し、定数dogに対してgetHumanAgeメソッドを呼び出した値を代入してください
+const humanAge = dog.getHumanAge();
+console.log(`人間年齢で${humanAge}歳です`); // 「人間年齢で〇〇歳です」と出力
+```
+
+## オーバーライド : 子クラスのメソッドが、親クラスのメソッドを上書きすること、コンストラクタも可
+
+```javascript
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log("こんにちは");
+  }
+
+  info() {
+    this.greet();
+    console.log(`名前は${this.name}です`);
+    console.log(`${this.age}歳です`);
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, age, breed) {
+    super(name, age); // constructor も上書きできる、super(引数);
+    this.breed = breed;
+  }
+
+  // 親クラスとの同名メソッド、子クラスが優先される
+  info() {
+    this.greet();
+    console.log(`名前は${this.name}です`);
+    console.log(`犬種は${this.breed}です`); // コンストラクタ、dogクラスで追加
+    console.log(`${this.age}歳です`);
+    const humanAge = this.getHumanAge(); // 親クラスのメソッドに追加、上書き
+    console.log(`人間年齢で${humanAge}歳です`);
+  }
+
+  getHumanAge() {
+    return this.age * 7;
+  }
+}
+
+const dog = new Dog("レオ", 4, "チワワ"); // インスタンスはコンストラクタに引数の数合わせる?
+dog.info();
+```
+
+# Lesson 3
 
 ## アロー関数
 
@@ -50,7 +213,7 @@ if (check(123)) {
 }
 ```
 
-# lesson 1~2
+# Lesson 1~2
 
 ## 変数 定数
 
