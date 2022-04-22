@@ -1,6 +1,51 @@
 # ES2015 (ES6)
 
-# Lesson 4
+# **Lesson5**
+
+## export import
+
+```javascript
+// クラスの定義の後で「export default クラス名」とすることで、そのクラスをエクスポート（出力）し、他のファイルへ渡すことができる
+class Animal {}
+export default Animal;
+// 使用するファイルの先頭で「import クラス名 from "./ファイル名"」と書くことでインポートすることができる。ファイル名の拡張子「.js」は省略可。
+import Animal from "./animal";
+class Dog extends Animal {}
+```
+
+## エクスポートはクラスだけでなく、どんな値でも可能
+
+```javascript
+import dog from "./dogData"; //export default の場合、値の名前が間違っていても問題ない。
+import { dog1, dog2 } from "./dogData"; // 名前付きインポート
+
+dogDate.js;
+export default dog; // デフォルトエクスポートは1ファイルにつき1回のみ
+export { dog1, dog2 }; // default を書かず名前付きエクスポートを使う、複数の定数を送ることも可
+```
+
+## 相対パス
+
+```javascript
+//ファイル名の部分が相対パス、記述されているファイルから見た位置関係
+import { dog1, dog2 } from "./data/dogData"; // ./ 現在のファイルと同じディレクトリ
+import Dog from "../class/dog"; // ../ １つ上の階層の場合
+```
+
+## パッケージ
+
+```javascript
+// import 定数名 from "パッケージ名"; ファイル名ではなくパッケージ名を指定する
+import chalk from "chalk"; // 出力する文字の色を変えることができるパッケージ
+console.log(chalk.yellow(`名前は${this.name}です`)); // 黄色の文字で出力される
+console.log(chalk.bgCyan(`犬種は${this.breed}です`)); // 背景色シアンで出力
+import readlineSync from "readline-sync"; // 標準入力のパッケージ
+const name = readlineSync.question("名前を入力してください:");
+// readlineSync.questionIntを使って書き換え、数値が欲しい時はIntを加える
+const age = readlineSync.questionInt("年齢を入力してください:");
+```
+
+# **Lesson 4**
 
 ## オブジェクト : 復習 値には関数も設定できる
 
@@ -163,7 +208,7 @@ const dog = new Dog("レオ", 4, "チワワ"); // インスタンスはコンス
 dog.info();
 ```
 
-# Lesson 3
+# **Lesson 3**
 
 ## アロー関数
 
@@ -213,7 +258,7 @@ if (check(123)) {
 }
 ```
 
-# Lesson 1~2
+# **Lesson 1~2**
 
 ## 変数 定数
 
